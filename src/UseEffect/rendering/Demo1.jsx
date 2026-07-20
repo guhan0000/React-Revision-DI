@@ -6,9 +6,13 @@ import Child from "./Child";
 // 3 . parent renders -> child also renders
 const Demo1 = () => {
   const [count, setCount] = useState(0);
-  //   useEffect(() => {
-  //     console.log("component rendered");
-  //   });
+  useEffect(() => {
+    let msg = "";
+    count != 0
+      ? (msg = "count changes useEffect")
+      : (msg = "inital render in useEffect");
+    console.log(msg);
+  }, [count]);
   console.log(" render");
 
   return (
