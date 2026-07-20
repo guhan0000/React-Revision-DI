@@ -18,11 +18,9 @@ const ProdList = () => {
     <>
       <div>ProdList</div>
       {products.map((product, index) => {
-        if (product.title.startsWith("C")) {
-          console.log(product.title);
-
-          return <h1>{product.title}</h1>;
-        }
+        return (
+         ( product.title.startsWith("C") &&  product.title.endsWith("e")) && <h3 key={index}>{product.title}</h3>
+        );
       })}
     </>
   );
