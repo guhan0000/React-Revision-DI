@@ -1,22 +1,17 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "./assets/vite.svg";
-import heroImg from "./assets/hero.png";
-import "./App.css";
-import Home from "./pages/Home";
-import PaginationDemo from "./pagination/PaginationDemo";
-import ColorChange from "./UseState/ColorChange";
-import Counter from "./UseState/Counter";
-import MovieCard from "./pages/MovieCard";
-import ProdList from "./conditionalRendering/ProdList";
+import { useContext, useState } from "react";
+import Home from "./UseContext/Home";
+import UserContext from "./UseContext/UserContext";
 
 function App() {
-  const [count, setCount] = useState(0);
-
+  const user = {
+    userName: "Guhan",
+    role: "Admin",
+  };
   return (
     <>
-      <h1 className="text-success">React-Revision</h1>
-      <ProdList />
+      <UserContext.Provider value={user}>
+        <Home />
+      </UserContext.Provider>
     </>
   );
 }
