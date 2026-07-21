@@ -1,17 +1,14 @@
 import { useContext, useState } from "react";
-import Home from "./UseContext/Home";
-import UserContext from "./UseContext/UserContext";
+import Home from "./UseContext/theme/Home";
+import ThemeContext from "./UseContext/theme/ThemeContext";
 
 function App() {
-  const user = {
-    userName: "Guhan",
-    role: "Admin",
-  };
+  const [theme, setTheme] = useState("light");
   return (
     <>
-      <UserContext.Provider value={user}>
+      <ThemeContext.Provider value={{theme,setTheme}}>
         <Home />
-      </UserContext.Provider>
+      </ThemeContext.Provider>
     </>
   );
 }
