@@ -9,13 +9,16 @@ import Team from "./Routing/pages/Team";
 import Leadership from "./Routing/pages/Leadership";
 import Locations from "./Routing/pages/Locations";
 import ServiceContacts from "./Routing/pages/ServiceContacts";
+import Login from "./Routing/pages/Login";
+import Logout from "./Routing/pages/Logout";
 
 function App() {
   return (
     <>
       <NavBar />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Login />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/about" element={<About />}>
           <Route path="team" element={<Team />}></Route>
           <Route path="leadership" element={<Leadership />}></Route>
@@ -29,6 +32,7 @@ function App() {
         <Route path="/movie/:id" element={<Movie />} /> {/*url parameters*/}
         <Route path="/student/:id/:name" element={<Student />} />{" "}
         {/*multiple parameters*/}
+        <Route path="/logout" element={<Logout />}></Route>
       </Routes>
     </>
   );
