@@ -1,14 +1,30 @@
-import { useContext, useState } from "react";
-import Home from "./UseContext/theme/Home";
-import ThemeContext from "./UseContext/theme/ThemeContext";
+import { Route, Routes } from "react-router-dom";
+import NavBar from "./Routing/NavBar";
+import Home from "./Routing/pages/Home";
+import About from "./Routing/pages/About";
+import Contact from "./Routing/pages/Contact";
+import Movie from "./Routing/pages/Movie";
+import Student from "./Routing/pages/Student";
+import Team from "./Routing/pages/Team";
+import Leadership from "./Routing/pages/Leadership";
 
 function App() {
-  const [theme, setTheme] = useState("light");
   return (
     <>
-      <ThemeContext.Provider value={{theme,setTheme}}>
-        <Home />
-      </ThemeContext.Provider>
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />}>
+          <Route path="team" element={<Team />}></Route>
+          <Route path="leadership" element={<Leadership/>}></Route>
+        </Route>
+        {/*Nested Routes*/}
+        <Route path="/contact" element={<Contact />} />
+        <Route path="*" element={<h1>Page Not Found</h1>} />
+        <Route path="/movie/:id" element={<Movie />} /> {/*url parameters*/}
+        <Route path="/student/:id/:name" element={<Student />} />{" "}
+        {/*multiple parameters*/}
+      </Routes>
     </>
   );
 }
