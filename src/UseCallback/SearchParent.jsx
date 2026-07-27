@@ -5,8 +5,8 @@ const SearchParent = () => {
   const [name, setName] = useState("");
   console.log("parent render");
   const search = useCallback(() => {
-    console.log("searching");
-  }, []); // function doesn't recreates
+    console.log('searching '+name);
+  }, [name]); // function  recreates whenever name changes
   return (
     <div>
       SearchParent
