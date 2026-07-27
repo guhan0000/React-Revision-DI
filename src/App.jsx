@@ -1,10 +1,9 @@
-import CounterParent from "./UseCallback/CounterParent";
-
+import Home from "./CustomHooks/Home";
 
 function App() {
   return (
     <>
-    <CounterParent/>
+      <Home />
     </>
   );
 }

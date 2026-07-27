@@ -1,15 +1,23 @@
 import React from "react";
-import useUsers from "./hooks/useUsers";
+import useInput from "./hooks/useInput";
 
 const Home = () => {
-  const users = useUsers();
+  const email = useInput("");
+  const password = useInput("");
   return (
-    <div>
-      Home
-      {users.map((user) => (
-        <h3 key={user.id}>{user.firstName + " " + user.lastName}</h3>
-      ))}
-    </div>
+    <>
+      <h3>Home</h3>
+      <input type="text" placeholder="enter email" {...email} />
+      <input type="text" placeholder="enter password" {...password} />
+      <button
+        onClick={() => {
+          email.reset();
+          password.reset();
+        }}
+      >
+        reset
+      </button>
+    </>
   );
 };
 
