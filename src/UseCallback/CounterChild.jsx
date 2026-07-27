@@ -1,13 +1,13 @@
 import React from "react";
 
-const CounterChild = (props) => {
+const CounterChild = ({ handleClick }) => {
   console.log("child rendered");
-  console.log(props);
+  // alert("child render");
 
   return (
     <div>
       CounterChild
-      <button onClick={props.handleClick}>childButton{props.count}</button>
+      <button onClick={handleClick}>childButton</button>
     </div>
   );
 };

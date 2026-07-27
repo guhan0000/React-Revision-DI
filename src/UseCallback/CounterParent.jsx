@@ -6,7 +6,7 @@ const CounterParent = () => {
 
   const [count, setCount] = useState(0);
   const handleClick = () => {
-    console.log("handleClick");
+    console.log(" child handleClick");
   };
   return (
     <div>
@@ -20,7 +20,7 @@ const CounterParent = () => {
         +
       </button>
       <h2>{count}</h2>
-      <CounterChild handleClick={handleClick} count={count} />
+      <CounterChild handleClick={handleClick} />
     </div>
   );
 };
