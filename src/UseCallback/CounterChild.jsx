@@ -12,4 +12,4 @@ const CounterChild = ({ handleClick }) => {
   );
 };
 
-export default CounterChild;
+export default React.memo(CounterChild);

@@ -1,13 +1,13 @@
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import CounterChild from "./CounterChild";
 
 const CounterParent = () => {
   console.log("parent rendered");
 
   const [count, setCount] = useState(0);
-  const handleClick = () => {
+  const handleClick = useCallback(() => {
     console.log(" child handleClick");
-  };
+  }, []);
   return (
     <div>
       CounterParent
