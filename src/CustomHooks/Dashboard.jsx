@@ -1,14 +1,9 @@
 import React from "react";
-import useUsers from "./hooks/useUsers";
+import useWidth from "./hooks/useWidth";
 
 const Dashboard = () => {
-  const users = useUsers();
-  return (
-    <div>
-      Dashboard
-      {users.length}
-    </div>
-  );
+  const width = useWidth();
+  return <div>{width}</div>;
 };
 
 export default Dashboard;
