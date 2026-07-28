@@ -2,27 +2,22 @@ import React from "react";
 import useInput from "./hooks/useInput";
 
 const Home = () => {
-  const email = useInput("");
-  const password = useInput("");
+  const { reset: emailReset, ...emailProps } = useInput("");
+  const { reset: passwordReset, ...passwordProps } = useInput("");
+  console.log(emailProps);
+  console.log(emailReset);
+  console.log(passwordProps);
+  console.log(passwordReset);
+
   return (
     <>
       <h3>Home</h3>
-      <input
-        type="text"
-        placeholder="enter email"
-        value={email.value}
-        onChange={email.onChange}
-      />
-      <input
-        type="text"
-        placeholder="enter password"
-        value={password.value}
-        onChange={password.onChange}
-      />
+      <input type="text" placeholder="enter email" {...emailProps} />
+      <input type="password" placeholder="enter password" {...passwordProps} />
       <button
         onClick={() => {
-          email.reset();
-          password.reset();
+          emailReset();
+          passwordReset();
         }}
       >
         reset
