@@ -7,8 +7,18 @@ const Home = () => {
   return (
     <>
       <h3>Home</h3>
-      <input type="text" placeholder="enter email" {...email} />
-      <input type="text" placeholder="enter password" {...password} />
+      <input
+        type="text"
+        placeholder="enter email"
+        value={email.value}
+        onChange={email.onChange}
+      />
+      <input
+        type="text"
+        placeholder="enter password"
+        value={password.value}
+        onChange={password.onChange}
+      />
       <button
         onClick={() => {
           email.reset();
