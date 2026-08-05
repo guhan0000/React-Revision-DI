@@ -4,6 +4,7 @@ import { Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./lazy-loading/pages/Navbar";
 import SortProducts from "./dummyJSON/SortProducts";
+import FilterProducts from "./dummyJSON/FilterProducts";
 const Home = lazy(() => import("./lazy-loading/pages/Home"));
 const About = lazy(() => import("./lazy-loading/pages/About"));
 const Dashboard = lazy(() => import("./CustomHooks/Dashboard"));
@@ -33,7 +34,8 @@ function App() {
       >
         Load
       </button>
-      <SortProducts />
+      {/* <SortProducts /> */}
+      <FilterProducts />
     </>
   );
 }
