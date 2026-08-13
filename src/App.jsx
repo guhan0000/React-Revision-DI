@@ -5,7 +5,7 @@ import DeleteItem from "./axios/delete/DeleteItem";
 function App() {
   return (
     <>
-      <DeleteItem />
+      <GetItems />
     </>
   );
 }

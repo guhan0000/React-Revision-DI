@@ -1,11 +1,12 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import api from "../api/api";
 
 const GetItems = () => {
   const [result, setResult] = useState([]);
   async function getAllItems() {
     try {
-      const response = await axios.get("http://localhost:5000/api/items");
+      const response = await api.get("/items");
       console.log(response);
 
       setResult(response.data.data);
