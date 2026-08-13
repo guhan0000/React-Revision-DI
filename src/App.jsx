@@ -1,12 +1,11 @@
 import React, { useState } from "react";
-import AddUser from "./axios/post/AddUser";
-import UpdateUser from "./axios/put/UpdateUser";
-import UpdateCity from "./axios/patch/UpdateCity";
+import GetItems from "./axios/get/GetItems";
+import DeleteItem from "./axios/delete/DeleteItem";
 
 function App() {
   return (
     <>
-      <UpdateCity/>
+      <DeleteItem />
     </>
   );
 }
