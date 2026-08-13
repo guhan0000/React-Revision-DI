@@ -2,6 +2,9 @@ import axios from "axios";
 import React, { useState } from "react";
 
 const PostWithForm = () => {
+  const BASE_URL = import.meta.env.VITE_TMDB_API;
+  const ACCOUNT_ID = import.meta.env.VITE_TMDB_ACCOUNT_ID;
+  const TOKEN = import.meta.env.VITE_TMDB_TOKEN;
   const [mediaType, setMediaType] = useState("");
   const [mediaId, setMediaId] = useState("");
   const requestBody = {
@@ -15,12 +18,11 @@ const PostWithForm = () => {
       console.log("before axios");
 
       const response = await axios.post(
-        "https://api.themoviedb.org/3/account/22562184/watchlist",
+        `${BASE_URL}/account/${ACCOUNT_ID}/watchlist`,
         requestBody,
         {
           headers: {
-            Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0M2U0NzJlYTZhZDI0M2NlMzFkNmVhYTYzOTJkMTNhOSIsIm5iZiI6MTc2NTk3NTUzNS4zOCwic3ViIjoiNjk0MmE1ZWZjOWFlOGFjYjY2ZDczYThhIiwic2NvcGVzIjpbImFwaV9yZWFkIl0sInZlcnNpb24iOjF9.f1gALcu6ASBkv-yFTdNSqq9acwe1wjlleAxwq_gF3EQ",
+            Authorization: `Bearer ${TOKEN}`,
             "Content-Type": "application/json",
             Accept: "application/json",
           },

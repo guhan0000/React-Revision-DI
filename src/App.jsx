@@ -1,13 +1,12 @@
 import React, { useState } from "react";
-import GetProducts from "./axios/get/GetProducts";
-import Login from "./axios/post/Login";
-import AddFavourite from "./axios/post/AddFavourite";
-import PostWithForm from "./axios/post/PostWithForm";
+import AddUser from "./axios/post/AddUser";
+import UpdateUser from "./axios/put/UpdateUser";
+import UpdateCity from "./axios/patch/UpdateCity";
 
 function App() {
   return (
     <>
-      <AddFavourite />
+      <UpdateCity/>
     </>
   );
 }
