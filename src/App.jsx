@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import GetItems from "./axios/get/GetItems";
-import DeleteItem from "./axios/delete/DeleteItem";
+import InfiniteScrollDemo from "./concepts/infinte-scroll/InfiniteScrollDemo";
 
 function App() {
   return (
     <>
-      <GetItems />
+      <InfiniteScrollDemo />
     </>
   );
 }
