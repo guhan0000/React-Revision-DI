@@ -1,10 +1,12 @@
 import React, { useState } from "react";
-import Counter from "./redux-toolkit/store/Counter";
+import Product from "./redux-toolkit/Product";
+import Navbar from "./redux-toolkit/Navbar";
 
 function App() {
   return (
     <>
-      <Counter />
+      <Navbar />
+      <Product />
     </>
   );
 }
