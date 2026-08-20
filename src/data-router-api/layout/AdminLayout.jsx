@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
-
+const user = { userName: "Guhan", role: "admin" };
 const AdminLayout = () => {
   return (
     <div className="container">
@@ -13,7 +13,7 @@ const AdminLayout = () => {
         </ul>
       </aside>
       <main>
-        <Outlet />
+        <Outlet context={user} />
       </main>
     </div>
   );
