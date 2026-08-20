@@ -13,7 +13,7 @@ const Product = () => {
         <div key={product.id}>
           <h3>{product.title}</h3>
           <h4>{product.price}</h4>
-          <Link to={`/product/${product.id}`}>View Details</Link>
+          <Link to={`/admin/product/${product.id}`}>View Details</Link>
         </div>
       ))}
     </>

@@ -1,6 +1,8 @@
+import AdminLayout from "../layout/AdminLayout";
 import MainLayout from "../layout/MainLayout";
 import About from "../pages/About";
 import Achievements from "../pages/Achievements";
+import AdminDashboard from "../pages/AdminDashboard";
 import Contact from "../pages/Contact";
 import History from "../pages/History";
 import Home from "../pages/Home";
@@ -28,12 +30,22 @@ const routes = [
         element: <Contact />,
       },
       {
-        path: "product",
-        element: <Product />,
-      },
-      {
-        path: "product/:id",
-        element: <ProductDetails />,
+        path: "admin",
+        element: <AdminLayout />,
+        children: [
+          {
+            index: true,
+            element: <AdminDashboard />,
+          },
+          {
+            path: "product",
+            element: <Product />,
+          },
+          {
+            path: "product/:id",
+            element: <ProductDetails />,
+          },
+        ],
       },
     ],
   },
